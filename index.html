@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Page China | Discover Chinese</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #b8322a;
+  --dark-red: #8e261f;
+  --cream: #f7f2e9;
+  --white: #fffdf9;
+  --ink: #292725;
+  --muted: #716b63;
+  --line: #e8ded0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+}
+header {
+  max-width: 1180px;
+  margin: auto;
+  padding: 25px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-decoration: none;
+  color: var(--red);
+}
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--red);
+  border-radius: 50% 45% 48% 42%;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-style: italic;
+  transform: rotate(-9deg);
+}
+.brand-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -.8px;
+}
+.language {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--white);
+  padding: 11px 16px;
+  color: var(--ink);
+  font: inherit;
+}
+nav {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,253,249,.55);
+}
+.nav-inner {
+  max-width: 1180px;
+  margin: auto;
+  padding: 15px 32px;
+  display: flex;
+  gap: 30px;
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+nav a:hover { color: var(--red); }
+.hero {
+  max-width: 1180px;
+  margin: auto;
+  padding: 82px 32px 76px;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 55px;
+}
+.eyebrow {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(55px, 7vw, 86px);
+  line-height: .98;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--red);
+  margin: 22px 0;
+}
+.hero p {
+  max-width: 530px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.hero-art {
+  min-height: 335px;
+  border-radius: 48% 48% 12px 12px;
+  background: #eee3d4;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sun {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: #d9a18d;
+  top: 43px;
+  right: 65px;
+  opacity: .75;
+}
+.mountain {
+  position: absolute;
+  bottom: -70px;
+  width: 120%;
+  height: 210px;
+  background: #b8b3a3;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-9deg);
+}
+.mountain.two {
+  bottom: -110px;
+  left: -50px;
+  background: #888f80;
+  transform: rotate(10deg);
+}
+.art-character {
+  z-index: 2;
+  color: var(--dark-red);
+  font-family: Georgia, serif;
+  font-size: 104px;
+  font-weight: bold;
+  opacity: .9;
+  transform: rotate(-8deg);
+  text-shadow: 2px 3px 0 rgba(255,255,255,.2);
+}
+.art-caption {
+  position: absolute;
+  z-index: 3;
+  bottom: 24px;
+  right: 25px;
+  color: white;
+  font-family: Georgia, serif;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+.programmes {
+  background: var(--white);
+  padding: 75px 32px 85px;
+}
+.section-inner {
+  max-width: 1050px;
+  margin: auto;
+}
+.section-heading { text-align: center; margin-bottom: 38px; }
+.section-heading h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 47px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--red);
+  margin: 12px 0;
+}
+.section-heading p { color: var(--muted); line-height: 1.7; }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.programme-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 34px;
+  background: var(--cream);
+  transition: .2s ease;
+}
+.programme-card.selected {
+  border: 2px solid var(--red);
+  box-shadow: 0 8px 25px rgba(100,50,30,.09);
+}
+.card-symbol {
+  color: var(--red);
+  font-family: Georgia, serif;
+  font-size: 47px;
+}
+.programme-card h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 35px;
+  margin: 13px 0 3px;
+  color: var(--red);
+}
+.chinese-name { color: var(--muted); font-size: 17px; }
+.programme-card p { color: var(--muted); line-height: 1.8; }
+.action {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--red);
+  color: white;
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 23px;
+  text-decoration: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.action:hover { background: var(--dark-red); }
+#selection-message {
+  text-align: center;
+  color: var(--red);
+  min-height: 26px;
+  margin-top: 25px;
+  font-size: 14px;
+}
+.welcome {
+  max-width: 850px;
+  margin: auto;
+  padding: 75px 32px;
+  text-align: center;
+}
+.welcome h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  color: var(--red);
+  font-size: 43px;
+}
+.welcome p { color: var(--muted); line-height: 1.9; }
+footer {
+  padding: 28px;
+  text-align: center;
+  background: #eee5d9;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media(max-width:700px) {
+  header { padding: 18px; flex-wrap: wrap; }
+  .brand-name { font-size: 25px; }
+  .hero { grid-template-columns: 1fr; padding: 55px 22px; gap: 30px; }
+  .hero-art { min-height: 260px; }
+  .cards { grid-template-columns: 1fr; }
+  .nav-inner { padding: 14px 18px; gap: 18px; flex-wrap: wrap; }
+  .programmes { padding: 55px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#">
+    <span class="brand-mark">文</span>
+    <span class="brand-name">Open Page China</span>
+  </a>
+  <select class="language" id="language" aria-label="Choose language">
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+  </select>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" data-en="HOME" data-fr="ACCUEIL" data-es="INICIO">HOME</a>
+    <a href="#programmes" data-en="LEARN CHINESE" data-fr="APPRENDRE LE CHINOIS" data-es="APRENDER CHINO">LEARN CHINESE</a>
+    <a href="#about" data-en="ABOUT US" data-fr="À PROPOS" data-es="SOBRE NOSOTROS">ABOUT US</a>
+    <a href="#contact" data-en="CONTACT" data-fr="CONTACT" data-es="CONTACTO">CONTACT</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow" data-en="A new world of language awaits" data-fr="Un nouveau monde de langues vous attend" data-es="Un nuevo mundo de idiomas te espera">A new world of language awaits</div>
+    <h1 data-en="Open a page.<br>Discover China." data-fr="Ouvrez une page.<br>Découvrez la Chine." data-es="Abre una página.<br>Descubre China.">Open a page.<br>Discover China.</h1>
+    <p data-en="Begin your journey into Chinese through language, stories, culture and conversation. Learn at your own pace, one page at a time." data-fr="Commencez votre voyage dans la langue chinoise à travers les histoires, la culture et la conversation. Apprenez à votre rythme, une page à la fois." data-es="Comienza tu viaje por el idioma chino a través de historias, cultura y conversación. Aprende a tu propio ritmo, una página a la vez.">Begin your journey into Chinese through language, stories, culture and conversation. Learn at your own pace, one page at a time.</p>
+    <a class="action" href="#programmes" data-en="Explore the programmes" data-fr="Découvrir les programmes" data-es="Explorar los programas">Explore the programmes</a>
+  </div>
+  <div class="hero-art" aria-label="Chinese-inspired decorative artwork">
+    <div class="sun"></div>
+    <div class="mountain"></div>
+    <div class="mountain two"></div>
+    <div class="art-character">文</div>
+    <div class="art-caption">Language · Culture · Discovery</div>
+  </div>
+</section>
+
+<section class="programmes" id="programmes">
+  <div class="section-inner">
+    <div class="section-heading">
+      <div class="eyebrow" data-en="Choose your journey" data-fr="Choisissez votre parcours" data-es="Elige tu camino">Choose your journey</div>
+      <h2 data-en="Two ways to discover Chinese" data-fr="Deux façons de découvrir le chinois" data-es="Dos formas de descubrir el chino">Two ways to discover Chinese</h2>
+      <p data-en="Choose the Chinese language you would like to learn." data-fr="Choisissez la langue chinoise que vous souhaitez apprendre." data-es="Elige el idioma chino que quieres aprender.">Choose the Chinese language you would like to learn.</p>
+    </div>
+
+    <div class="cards">
+      <article class="programme-card" id="mandarin-card">
+        <div class="card-symbol">文</div>
+        <h3>Mandarin</h3>
+        <div class="chinese-name">普通话 · Pǔtōnghuà</div>
+        <p data-en="Discover Mandarin through Pinyin, pronunciation, tones, characters and everyday conversation." data-fr="Découvrez le mandarin grâce au pinyin, à la prononciation, aux tons, aux caractères et aux conversations quotidiennes." data-es="Descubre el mandarín mediante pinyin, pronunciación, tonos, caracteres y conversaciones cotidianas.">Discover Mandarin through Pinyin, pronunciation, tones, characters and everyday conversation.</p>
+        <button class="action choose" data-programme="Mandarin" data-en="Choose Mandarin" data-fr="Choisir le mandarin" data-es="Elegir mandarín">Choose Mandarin</button>
+      </article>
+
+      <article class="programme-card" id="cantonese-card">
+        <div class="card-symbol">語</div>
+        <h3>Cantonese</h3>
+        <div class="chinese-name">廣東話 · Gwóngdūng wá</div>
+        <p data-en="Explore Cantonese through Jyutping, pronunciation, tones, traditional characters and everyday conversation." data-fr="Explorez le cantonais grâce au jyutping, à la prononciation, aux tons, aux caractères traditionnels et aux conversations quotidiennes." data-es="Explora el cantonés mediante jyutping, pronunciación, tonos, caracteres tradicionales y conversaciones cotidianas.">Explore Cantonese through Jyutping, pronunciation, tones, traditional characters and everyday conversation.</p>
+        <button class="action choose" data-programme="Cantonese" data-en="Choose Cantonese" data-fr="Choisir le cantonais" data-es="Elegir cantonés">Choose Cantonese</button>
+      </article>
+    </div>
+    <div id="selection-message" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="welcome" id="about">
+  <div class="eyebrow" data-en="Learn at your own pace" data-fr="Apprenez à votre rythme" data-es="Aprende a tu propio ritmo">Learn at your own pace</div>
+  <h2 data-en="Every page opens a new possibility." data-fr="Chaque page ouvre une nouvelle possibilité." data-es="Cada página abre una nueva posibilidad.">Every page opens a new possibility.</h2>
+  <p data-en="Whether you are taking your first steps or building on what you already know, Open Page China will help you explore the language and culture of Chinese-speaking communities." data-fr="Que vous fassiez vos premiers pas ou que vous approfondissiez vos connaissances, Open Page China vous aidera à explorer la langue et la culture des communautés sinophones." data-es="Tanto si estás dando tus primeros pasos como si ya tienes conocimientos, Open Page China te ayudará a explorar el idioma y la cultura de las comunidades de habla china.">Whether you are taking your first steps or building on what you already know, Open Page China will help you explore the language and culture of Chinese-speaking communities.</p>
+</section>
+</main>
+
+<footer id="contact">
+  <span>Open Page China</span> · <span data-en="Your journey into Chinese begins here." data-fr="Votre voyage dans la langue chinoise commence ici." data-es="Tu viaje por el chino comienza aquí.">Your journey into Chinese begins here.</span>
+</footer>
+
+<script>
+const languagePicker = document.getElementById("language");
+
+languagePicker.addEventListener("change", function() {
+  const language = this.value;
+  document.documentElement.lang = language;
+  document.querySelectorAll("[data-" + language + "]").forEach(function(element) {
+    element.innerHTML = element.getAttribute("data-" + language);
+  });
+});
+
+document.querySelectorAll(".choose").forEach(function(button) {
+  button.addEventListener("click", function() {
+    const programme = this.dataset.programme;
+    document.querySelectorAll(".programme-card").forEach(card => card.classList.remove("selected"));
+    this.closest(".programme-card").classList.add("selected");
+    const messages = {
+      en: programme + " selected. Your learning journey starts here!",
+      fr: (programme === "Mandarin" ? "Mandarin" : "Cantonais") + " sélectionné. Votre apprentissage commence ici !",
+      es: (programme === "Mandarin" ? "Mandarín" : "Cantonés") + " seleccionado. ¡Tu aprendizaje comienza aquí!"
+    };
+    document.getElementById("selection-message").textContent = messages[languagePicker.value];
+  });
+});
+</script>
+</body>
+</html>
